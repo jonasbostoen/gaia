@@ -10,26 +10,6 @@ order: 3
 >
 > _To quickly sync a Cosmos Hub node it's recommended that you use the [cosmos.quicksync.io](https://cosmos.quicksync.io/) snapshots._
 
-<!-- #sync options -->
-::::::: tabs :options="{ useUrlFragment: false }"
-
-:::::: tab Default
-Something in here
-::::::
-
-:::::: tab Pruned
-
-Something
-::::::
-
-:::::: tab Archive
-Soemthing
-::::::
-
-:::::::
-
-<!-- #end -->
-
 ## Quickstart
 
 **Get Ready**

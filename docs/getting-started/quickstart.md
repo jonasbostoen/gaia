@@ -7,7 +7,7 @@ order: 3
 **Bootstrap a  `cosmoshub-4` mainnet node**
 
 ### Prerequisites
-Make sure the [Gaia CLI is installed](./installation.md).
+> **Note**: Make sure the [Gaia CLI is installed](./installation.md).
 
 ### Sync Options
 Node operators can choose to sync via State Sync of Quicksync. State Sync works by replaying larger chunks of application state directly rather than replaying individual blocks or consensus rounds. Quicksync is a service provided courtesy of Chainlayer, and offers historical state of the chain available for download every 24 hours. For more information on both see the Sync Options section of the full [Joining Mainnet Tutorial](../hub-tutorials/joining-mainnet.md)
@@ -52,13 +52,13 @@ gaiad start --x-crisis-skip-assert-invariants
 
 :::::: tab Quicksync
 
-##### Initialize gaia
+#### Initialize gaia
 ```bash
 gaiad init <custom moniker> --home <path to home>
 ```
 
 
-##### Set Gas & Metrics
+#### Set Gas & Metrics
 ```bash
 sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.001uatom"/' app.toml
 
@@ -66,19 +66,19 @@ sed -i 's/prometheus = false/prometheus = true/' config.toml
 ```
 
 
-##### Copy Address Book Quicksync
+#### Copy Address Book Quicksync
 ```bash
 curl https://quicksync.io/addrbook.cosmos.json > addrbook.json
 ```
 
 
-##### Start Quicksync Download
+#### Start Quicksync Download
 <!-- #quicksync options -->
 Node Operators can decide how much of historical state they want to preserve by choosing between `Pruned`, `Default`, and `Archive`. See the [Quicksync.io downloads](https://quicksync.io/networks/cosmos.html) for up to date snapshot sizes.
 
-::::::: tabs :options="{ useUrlFragment: false }"
+:::: tabs :options="{ useUrlFragment: false }"
 
-:::::: tab Default
+::: tab Default
 ```bash=
 sudo apt-get install wget liblz4-tool aria2 -y
 
@@ -87,9 +87,9 @@ export URL=`curl https://quicksync.io/cosmos.json|jq -r '.[] |select(.file=="cos
 
 aria2c -x5 $URL
 ```
-::::::
+:::
 
-:::::: tab Pruned
+::: tab Pruned
 ```bash=
 sudo apt-get install wget liblz4-tool aria2 -y
 
@@ -98,9 +98,9 @@ export URL=`curl https://quicksync.io/cosmos.json|jq -r '.[] |select(.file=="cos
 
 aria2c -x5 $URL
 ```
-::::::
+:::
 
-:::::: tab Archive
+::: tab Archive
 ```bash=
 sudo apt-get install wget liblz4-tool aria2 -y
 
@@ -109,9 +109,9 @@ export URL=`curl https://quicksync.io/cosmos.json|jq -r '.[] |select(.file=="cos
 
 aria2c -x5 $URL
 ```
-::::::
+:::
 
-:::::::
+::::
 
 <!-- #end -->
 
@@ -135,7 +135,7 @@ Status Legend:
 (OK):download completed.
 ```
 
-##### Start Gaia
+#### Start Gaia
 ```bash
 gaiad start --x-crisis-skip-assert-invariants
 

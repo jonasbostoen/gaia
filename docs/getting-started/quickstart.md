@@ -60,7 +60,7 @@ gaiad init <custom moniker> --home <path to home>
 
 #### Set Gas & Metrics
 ```bash
-sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.001uatom"/' app.toml
+sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.0025uatom"/' app.toml
 
 sed -i 's/prometheus = false/prometheus = true/' config.toml
 ```

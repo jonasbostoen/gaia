@@ -52,17 +52,17 @@ gaiad start --x-crisis-skip-assert-invariants
 
 :::::: tab Quicksync
 
+> **Note**: Make sure to set the --home flag when initializing and starting `gaiad` if mounting quicksync data externally.
+
 #### Initialize gaia
 ```bash
-gaiad init <custom moniker> --home <path to home>
+gaiad init <custom moniker>
 ```
 
 
-#### Set Gas & Metrics
+#### Set Gas
 ```bash
-sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.0025uatom"/' app.toml
-
-sed -i 's/prometheus = false/prometheus = true/' config.toml
+sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.001uatom"/' app.toml
 ```
 
 

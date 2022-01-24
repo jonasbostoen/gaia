@@ -52,7 +52,7 @@ gaiad start --x-crisis-skip-assert-invariants
 
 :::::: tab Quicksync
 
-> **Note**: Make sure to set the --home flag when initializing and starting `gaiad` if mounting quicksync data externally.
+> **Note**: Make sure to set the `--home` flag when initializing and starting `gaiad` if mounting quicksync data externally.
 
 #### Initialize gaia
 ```bash

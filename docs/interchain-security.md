@@ -109,6 +109,7 @@ There are three types of operations within Cross Chain Validation which must be 
 
 
 *   Validator Set Updates
+*   Reward Distribution
 *   Evidence
 
 
